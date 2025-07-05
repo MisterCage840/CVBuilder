@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 15vw;
+  align-items: center;
+}
+.cvDisplay {
+  background-color: aqua;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
