@@ -1,0 +1,25 @@
+.education-section {
+  margin-bottom: 2rem;
+}
+
+.education-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.education-entry {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 4px solid #2ecc71;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.education-entry p {
+  margin: 0.3rem 0 0;
+  color: #555;
+  line-height: 1.4;
+}

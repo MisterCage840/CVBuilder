@@ -1,6 +1,3 @@
-import { useState } from "react"
-import "./educationSection.css"
-
 function EducationSection({
   schoolName,
   fieldofStudy,
@@ -14,69 +11,72 @@ function EducationSection({
   setEducationCounter,
 }) {
   return (
-    <div className="educationHeader">
+    <div className="education-section">
       <fieldset>
-        <section>
-          <div className="labels">
-            <label htmlFor="schoolName">School Name:</label>
-            <label htmlFor="fieldofStudy">Field of Study: </label>
-            <label htmlFor="studyStartDate">Start Date:</label>
-            <label htmlFor="studyFinishDate">Finish Date: </label>
-          </div>
-          <div className="inputs">
-            <input
-              type="text"
-              name="schoolName"
-              id="schoolName"
-              placeholder="Phoneix University"
-              value={schoolName}
-              onChange={(e) => setSchoolName(e.target.value)}
-            />
-            <input
-              type="text"
-              name="fieldofStudy"
-              id="fieldofStudy"
-              placeholder="Business Administration"
-              value={fieldofStudy}
-              onChange={(e) => setFieldofStudy(e.target.value)}
-            />
-            <input
-              type="date"
-              name="studyStartDate"
-              id="studyStartDate"
-              value={studyStartDate}
-              onChange={(e) =>
-                setStudyStartDate(new Date(e.target.value).toLocaleDateString())
-              }
-            />
-            <input
-              type="date"
-              name="studyFinishDate"
-              id="studyFinishDate"
-              value={studyFinishDate}
-              onChange={(e) =>
-                setStudyFinishDate(
-                  new Date(e.target.value).toLocaleDateString()
-                )
-              }
-            />
-          </div>
-        </section>
-        <button
-          onClick={function addEducation() {
-            const education = {
-              id: Date.now(),
-              schoolName: schoolName,
-              fieldofStudy: fieldofStudy,
-              studyStartDate: studyStartDate,
-              studyFinishDate: studyFinishDate,
+        <legend>Education</legend>
+        <div className="field">
+          <label htmlFor="schoolName">School Name:</label>
+          <input
+            type="text"
+            id="schoolName"
+            placeholder="Phoenix University"
+            value={schoolName}
+            onChange={(e) => setSchoolName(e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="fieldofStudy">Field of Study:</label>
+          <input
+            type="text"
+            id="fieldofStudy"
+            placeholder="Business Administration"
+            value={fieldofStudy}
+            onChange={(e) => setFieldofStudy(e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="studyStartDate">Start Date:</label>
+          <input
+            type="date"
+            id="studyStartDate"
+            value={studyStartDate}
+            onChange={(e) =>
+              setStudyStartDate(new Date(e.target.value).toLocaleDateString())
             }
-            setEducationList((prev) => [...prev, education])
-            setEducationCounter((prev) => prev + 1)
-          }}
-        >
-          Submit
-        </button>
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="studyFinishDate">Finish Date:</label>
+          <input
+            type="date"
+            id="studyFinishDate"
+            value={studyFinishDate}
+            onChange={(e) =>
+              setStudyFinishDate(new Date(e.target.value).toLocaleDateString())
+            }
+          />
+        </div>
+        <div className="field button-field">
+          <button
+            onClick={() => {
+              const education = {
+                id: Date.now(),
+                schoolName,
+                fieldofStudy,
+                studyStartDate,
+                studyFinishDate,
+              }
+              setEducationList((prev) => [...prev, education])
+              setEducationCounter((prev) => prev + 1)
+              setSchoolName("")
+              setFieldofStudy("")
+              setStudyStartDate("")
+              setStudyFinishDate("")
+            }}
+          >
+            Add Education
+          </button>
+        </div>
       </fieldset>
     </div>
   )

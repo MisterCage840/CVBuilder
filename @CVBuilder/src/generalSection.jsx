@@ -1,6 +1,3 @@
-import { useState } from "react"
-import "./generalSection.css"
-
 function GeneralSection({
   firstName,
   lastName,
@@ -15,13 +12,8 @@ function GeneralSection({
     <div className="header">
       <fieldset>
         <section>
-          <div className="labels">
+          <div className="field">
             <label htmlFor="firstName">First Name:</label>
-            <label htmlFor="lastName">Last Name:</label>
-            <label htmlFor="email">Email:</label>
-            <label htmlFor="phoneNumber">Phone Number:</label>
-          </div>
-          <div className="inputs">
             <input
               type="text"
               id="firstName"
@@ -29,6 +21,9 @@ function GeneralSection({
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
+          </div>
+          <div className="field">
+            <label htmlFor="lastName">Last Name:</label>
             <input
               type="text"
               id="lastName"
@@ -36,6 +31,9 @@ function GeneralSection({
               onChange={(e) => setLastName(e.target.value)}
               required
             />
+          </div>
+          <div className="field">
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -43,6 +41,9 @@ function GeneralSection({
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+          </div>
+          <div className="field">
+            <label htmlFor="phoneNumber">Phone Number:</label>
             <input
               type="tel"
               id="phoneNumber"

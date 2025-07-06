@@ -1,10 +1,10 @@
+import "./displayGeneralInfo.css"
+
 function DisplayGeneralInfo({ firstName, lastName, email, phoneNumber }) {
   return (
-    <div>
+    <div className="general-info">
       <h1>
-        <strong>
-          {firstName} {lastName}
-        </strong>
+        {firstName} {lastName}
       </h1>
       <p>
         <strong>Email:</strong> {email} | <strong>Phone Number:</strong>{" "}

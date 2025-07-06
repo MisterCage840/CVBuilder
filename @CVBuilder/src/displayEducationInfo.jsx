@@ -1,16 +1,24 @@
+import "./displayEducationInfo.css"
+
 function DisplayEducationInfo({ educationList }) {
   const list = educationList.map((education) => (
-    <div key={education.id}>
+    <div className="education-entry" key={education.id}>
       <p>
-        <strong> {education.schoolName} </strong> | <strong>Field: </strong>{" "}
-        {education.fieldofStudy}
-        <strong>
-          {education.studyStartDate} --- {education.studyFinishDate}
-        </strong>
+        <strong>{education.schoolName}</strong>
+      </p>
+      <p>
+        <strong>Field:</strong> {education.fieldofStudy} |{" "}
+        {education.studyStartDate} --- {education.studyFinishDate}
       </p>
     </div>
   ))
-  return <div>{list}</div>
+
+  return (
+    <div className="education-section">
+      <h2>Education</h2>
+      {list}
+    </div>
+  )
 }
 
 export default DisplayEducationInfo

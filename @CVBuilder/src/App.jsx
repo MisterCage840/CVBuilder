@@ -1,6 +1,4 @@
-import { use, useState } from "react"
-import reactLogo from "./assets/react.svg"
-import viteLogo from "/vite.svg"
+import { useState } from "react"
 import "./App.css"
 import GeneralSection from "./generalSection.jsx"
 import EducationSection from "./educationSection.jsx"
@@ -67,78 +65,81 @@ function App() {
   const onExpSave = () => setCurrentExpEditingId(null)
 
   return (
-    <div className="mainContainer">
-      <div className="inputSection">
-        <GeneralSection
-          firstName={firstName}
-          lastName={lastName}
-          email={email}
-          phoneNumber={phoneNumber}
-          setFirstName={setFirstName}
-          setLastName={setLastName}
-          setEmail={setEmail}
-          setPhoneNumber={setPhoneNumber}
-        />
-        <EducationSection
-          schoolName={schoolName}
-          fieldofStudy={fieldofStudy}
-          studyStartDate={studyStartDate}
-          studyFinishDate={studyFinishDate}
-          educationList={educationList}
-          educationCounter={educationCounter}
-          setSchoolName={setSchoolName}
-          setFieldofStudy={setFieldofStudy}
-          setStudyStartDate={setStudyStartDate}
-          setStudyFinishDate={setStudyFinishDate}
-          setEducationList={setEducationList}
-          setEducationCounter={setEducationCounter}
-        />
-        <DisplayEducList
-          educationList={educationList}
-          onEdit={editList}
-          onDelete={deleteList}
-          currentEditingId={currentEditingId}
-          onSave={onSave}
-          onChange={onChange}
-        />
-        <ExperienceSection
-          companyName={companyName}
-          positionTitle={positionTitle}
-          responsibility={responsibility}
-          workStartDate={workStartDate}
-          workFinishDate={workFinishDate}
-          experienceCounter={experienceCounter}
-          experienceList={experienceList}
-          setCompanyName={setCompanyName}
-          setPositionTitle={setPositionTitle}
-          setResponsibility={setResponsibility}
-          setWorkStartDate={setWorkStartDate}
-          setWorkFinishDate={setWorkFinishDate}
-          setExperienceCounter={setExperienceCounter}
-          setExperienceList={setExperienceList}
-        />
-        <DisplayExpList
-          experienceList={experienceList}
-          onEdit={editExpList}
-          onDelete={deleteExpList}
-          currentExpEditingId={currentExpEditingId}
-          onSave={onExpSave}
-          onChange={onExpChange}
-        />
-      </div>
-      <div className="cvDisplay">
-        <DisplayGeneralInfo
-          firstName={firstName}
-          lastName={lastName}
-          email={email}
-          phoneNumber={phoneNumber}
-        />
-        <DisplayEducationInfo
-          educationList={educationList}
-          educationCounter={educationCounter}
-          setEducationCounter={setEducationCounter}
-        />
-        <DisplayExpInfo experienceList={experienceList} />
+    <div>
+      <h1>CV Builder</h1>
+      <div className="mainContainer">
+        <div className="inputSection">
+          <GeneralSection
+            firstName={firstName}
+            lastName={lastName}
+            email={email}
+            phoneNumber={phoneNumber}
+            setFirstName={setFirstName}
+            setLastName={setLastName}
+            setEmail={setEmail}
+            setPhoneNumber={setPhoneNumber}
+          />
+          <EducationSection
+            schoolName={schoolName}
+            fieldofStudy={fieldofStudy}
+            studyStartDate={studyStartDate}
+            studyFinishDate={studyFinishDate}
+            educationList={educationList}
+            educationCounter={educationCounter}
+            setSchoolName={setSchoolName}
+            setFieldofStudy={setFieldofStudy}
+            setStudyStartDate={setStudyStartDate}
+            setStudyFinishDate={setStudyFinishDate}
+            setEducationList={setEducationList}
+            setEducationCounter={setEducationCounter}
+          />
+          <DisplayEducList
+            educationList={educationList}
+            onEdit={editList}
+            onDelete={deleteList}
+            currentEditingId={currentEditingId}
+            onSave={onSave}
+            onChange={onChange}
+          />
+          <ExperienceSection
+            companyName={companyName}
+            positionTitle={positionTitle}
+            responsibility={responsibility}
+            workStartDate={workStartDate}
+            workFinishDate={workFinishDate}
+            experienceCounter={experienceCounter}
+            experienceList={experienceList}
+            setCompanyName={setCompanyName}
+            setPositionTitle={setPositionTitle}
+            setResponsibility={setResponsibility}
+            setWorkStartDate={setWorkStartDate}
+            setWorkFinishDate={setWorkFinishDate}
+            setExperienceCounter={setExperienceCounter}
+            setExperienceList={setExperienceList}
+          />
+          <DisplayExpList
+            experienceList={experienceList}
+            onEdit={editExpList}
+            onDelete={deleteExpList}
+            currentExpEditingId={currentExpEditingId}
+            onSave={onExpSave}
+            onChange={onExpChange}
+          />
+        </div>
+        <div className="cvDisplay">
+          <DisplayGeneralInfo
+            firstName={firstName}
+            lastName={lastName}
+            email={email}
+            phoneNumber={phoneNumber}
+          />
+          <DisplayEducationInfo
+            educationList={educationList}
+            educationCounter={educationCounter}
+            setEducationCounter={setEducationCounter}
+          />
+          <DisplayExpInfo experienceList={experienceList} />
+        </div>
       </div>
     </div>
   )
